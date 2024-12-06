@@ -68,9 +68,6 @@ status ModuleState::initFileModule(AFfilehandle file, Track *track)
 		m_fileModule = unit->initcompress(track, file->fh, file->seekok,
 			file->fileFormat == AF_FILE_RAWDATA, &chunkFrames);
 
-	if (!m_fileModule)
-		return AF_FAIL;
-
 	if (unit->needsRebuffer)
 	{
 		assert(unit->nativeSampleFormat == AF_SAMPFMT_TWOSCOMP);
